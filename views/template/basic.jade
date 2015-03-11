@@ -1,0 +1,35 @@
+extends layout
+
+block template-head
+  link(rel="stylesheet" href="styles/template/basic.css")
+  link(rel="stylesheet" href="/vendor/TimelineJS/build/css/timeline.css")
+
+  script(src="/vendor/TimelineJS/build/js/storyjs-embed.js")
+  script(src="/vendor/chartjs/Chart.js")
+  script(src="/js/template/basic.js")
+
+block template-body
+  .col-md-1.col-xs-2.nav-container
+    nav
+      ul.nav.nav-pills.nav-stacked
+        li(role="presentation").current: a.active(href="#main") 首页
+        li(role="presentation"): a(href="#aboutMe") 关于我
+        li(role="presentation"): a(href="#jobExperiences") 工作经验
+        li(role="presentation"): a(href="#skill") 专业能力
+        li(role="presentation"): a(href="#contact") 联系我
+  .col-md-11.col-xs-10.main-container
+    #main.jumbotron
+      #instruct.container
+        .instruct-name: h1 #{instruct.name}
+        .instruct-detail
+          pre #{instruct.detail}
+      #aboutMe.container
+        pre #{aboutMe.detail}
+      #jobExperiences.container
+        .job-timeline-contrainer
+          #jobTimeline(data-timeline=jobExperiences.timeline)
+      #skill.container
+        h2.title 专业能力
+        .skill-chart-contrainer
+          canvas(id="skillChart", width="400", height="400")
+      #contact.container
