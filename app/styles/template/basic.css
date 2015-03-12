@@ -23,7 +23,7 @@ body > .nav-container > nav {
 body > .nav-container > nav > ul >li {
     height: 6rem;
     width: 5rem;
-    opacity: .5;
+    opacity: .7;
     line-height: 6rem;
     color: rgb(52, 73, 94);
     border-bottom: 1px dashed #ccc;
@@ -33,22 +33,21 @@ body > .nav-container > nav > ul >li {
     margin: 4px 0px 4px 4px;
 }
 
-body > .nav-container > nav > ul .current, nav > ul >li:hover {
-    opacity: 1;
+/*body > .nav-container > nav > ul > li.active a, body > .nav-container > nav > ul > li.active a:focus {
     background-color: #fff;
-}
+    background-color: inherit;
+    font-weight: bold;
+}*/
 
 body > .nav-container > nav > ul > li > a {
     height: 90%;
     color: rgb(52, 73, 94);
-    text-shadow: rgb(255, 255, 255) 1px 1px 0px;
-    text-shadow: 1px 1px 0 white;
     padding: 0 !important;
 }
 
-body > .nav-container > nav > ul > li > a:hover, nav > ul > li > a:focus {
+/*body > .nav-container > nav > ul > li > a:hover, nav > ul > li > a:focus {
     background-color: inherit !important;
-}
+}*/
 
 .main-container {
     position: absolute;
@@ -67,7 +66,7 @@ body > .nav-container > nav > ul > li > a:hover, nav > ul > li > a:focus {
 }
 
 #main > .container {
-    min-height: 640px;
+    min-height: 100px;
     width: 100%;
 }
 
@@ -131,17 +130,17 @@ body > .nav-container > nav > ul > li > a:hover, nav > ul > li > a:focus {
 }
 
 #aboutMe pre:first-letter {
-    font-size: 4em;
-    margin: 0.5em 0.5em 0;
-    line-height: 0.25;
+    font-size: 3em;
+    margin: 0.5em 0;
     float: left;
 }
 
 #jobExperiences {
+    background-color: currentcolor;
 }
 
 #jobExperiences .job-timeline-contrainer {
-    margin: 3rem auto 0;
+    margin: 3rem auto;
     height: 600px;
     width: 80%;
 }
@@ -153,6 +152,10 @@ body > .nav-container > nav > ul > li > a:hover, nav > ul > li > a:focus {
     white-space: pre-wrap;
 }
 
+#skill {
+    background-color: lightslategray;
+}
+
 #skill .title {
     font-family: "微软雅黑";
     font-weight: bold;
@@ -161,8 +164,57 @@ body > .nav-container > nav > ul > li > a:hover, nav > ul > li > a:focus {
     margin-left: 1em;
 }
 
+#skill > .container {
+    width: 48%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border: none;
+}
+
+#skill > .personal-work {
+    float: left;
+    margin-left: 1em;
+}
+
+#skill > .personal-work ul li a {
+    display: block;
+    float: right;
+    margin-right: 2em;
+    cursor: pointer;
+    color: inherit;
+}
+
+#skill > .personal-work ul ul {
+    margin-top: 1em;
+}
+
+
+#skill > .personal-work li span {
+    display: block;
+    margin-right: 1em;
+}
+
+#skill > .skill-ability {
+    float: right;
+    margin-right: 1em;
+}
+
 #skill .skill-chart-contrainer {
     width: 400px;
     height: 400px;
     margin: 2rem auto 0;
+}
+
+#contact {
+    height: 200px;
+    background-color: rgb(26,188,156);
+    color: #fff;
+    text-align: center;
+    padding-top: 3em;
+}
+
+#contact h5 a{
+    color: #fff;
 }

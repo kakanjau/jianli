@@ -9,16 +9,16 @@ block template-head
   script(src="/js/template/basic.js")
 
 block template-body
-  .col-md-1.col-xs-2.nav-container
+  .col-md-1.col-xs-1.nav-container
     nav
       ul.nav.nav-pills.nav-stacked
-        li(role="presentation").current: a.active(href="#main") 首页
+        li(role="presentation"): a.active(href="#main") 首页
         li(role="presentation"): a(href="#aboutMe") 关于我
         li(role="presentation"): a(href="#jobExperiences") 工作经验
-        li(role="presentation"): a(href="#skill") 专业能力
+        li(role="presentation"): a(href="#skill") 能力
         li(role="presentation"): a(href="#contact") 联系我
   .col-md-11.col-xs-10.main-container
-    #main.jumbotron
+    #main.jumbotron(data-spy="scroll" data-target=".nav-container" data-offset="0")
       #instruct.container
         .instruct-name: h1 #{instruct.name}
         .instruct-detail
@@ -27,9 +27,53 @@ block template-body
         pre #{aboutMe.detail}
       #jobExperiences.container
         .job-timeline-contrainer
-          #jobTimeline(data-timeline=jobExperiences.timeline)
+          #jobTimeline(data-timedate=jobExperiences.timedate)
       #skill.container
-        h2.title 专业能力
-        .skill-chart-contrainer
-          canvas(id="skillChart", width="400", height="400")
+        .container.personal-work.panel.panel-default
+          .panel-heading 个人产品
+          .panel-body
+            mixin showWork(work, index)
+              if index%2 == 0
+                li.list-group-item.list-group-item-info
+                  label= work.name
+                  span= work.text
+                  if work.subwork && work.subwork.length > 0
+                    ul.list-group
+                      each subwork,subindex in work.subwork
+                        if subindex%2 == 0
+                          li.list-group-item.list-group-item-warning
+                        else
+                          li.list-group-item
+
+                            label= subwork.name
+                            span= subwork.text
+              else
+                li.list-group-item.list-group-item-success
+                  label= work.name
+                  span= work.text
+                  if work.subwork && work.subwork.length > 0
+                    ul.list-group
+                      each subwork,subindex in work.subwork
+                        if subindex%2 == 0
+                          li.list-group-item.list-group-item-warning
+                            label= subwork.name
+                            span= subwork.text
+                        else
+                          li.list-group-item
+                            label= subwork.name
+                            span= subwork.text
+
+            ul.list-group
+              each work,index in skill.works
+                +showWork(work, index)
+
+        .container.skill-ability.panel.panel-default
+          .panel-heading 专业能力
+          .panel-body
+            .skill-chart-contrainer
+              canvas(id="skillChart", width="400", height="400", data-abilities=skill.abilities)
       #contact.container
+        h2 能与你们一起共事吗？
+        h5 电话: #{contact.phone}
+        h5 邮件: 
+          a(href="mailTo:"+contact.email) #{contact.email}

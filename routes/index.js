@@ -3,23 +3,126 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+    res.redirect('basic');
 });
 
 /* GET template page. */
 router.get('/:template/:jsonId?', function(req, res){
   var jsonData = {
     instruct: {
-        name: '陆婷杨',
-        detail: "我正在寻找高级软件测试的工作。\r\n I'M LOOKING FOR THE WORK OF SENIOR SOFTWARE TESTING."
+        name: '乔梁',
+        detail: "我正在寻找高级web前端开发工程师的工作。\r\n I'M LOOKING FOR THE WORK OF SENIOR WEB SOFTWEAR ENGINEER."
     },
     aboutMe: {
-        detail: "嗨，我叫陆廷扬，来自江苏扬中，2010年6月毕业于南京工程学院的计算机科学与技术专业。毕业后一直从事软件测试，热爱软件测试工作，对工作认真负责，能独立思考和解决问题。勇于尝试、有较强创新的能力；自学能力强，能够在较短的时间内熟悉公司业务。有良好的团队合作意识，能够主动承担责任和压力。\r\n2010年6月份就职于华通科技有限公司的软件测试工作，华通科技作为中兴发展有限公司全资子公司，我在里面主要负责网管双机机架环境进行系统测试,系统子模块包括告警管理、性能管理、跟踪管理、安全日志管理等。搭建测试环境，根据软件功能需求编写测试场景和测试用例，并能用自动化测试工具对软件产品进行测试。参与评审测试用例并有效执行用例，记录、跟踪Bug。验证并整理故障单完善测试用例覆盖率以备回归测试。根据测试结果提交测试报告。编写、维护测试工作的相关文档。对文档人员编写的文档进行测试。\r\n2013年3月到至今就职于伊时代信息科技股份有限公司的高级软件测试职位。我主要负责测试项目的管理及进度的把控，建立软件测试的标准规范和流程，持续提升测试团队的工作效率和质量，确保项目过程质量控制和产品质量的能力。对需求功能进行分析，分布任务并制定测试计划、方案，编写有效用例，参与评审和修改用例，独立完成Android、IOS应用测试任务，验证回归BUG，每轮测试后编写测试报告，发布到各应用平台以供给用户使用，执行版本控制和演示程序的准备，对用户体验方面的问题比较敏感并且拥有自己的见解。执行软件产品的性能测试和分析，评测系统性能瓶颈，风险和安全隐患。"
+        detail: "嗨，我叫乔梁，来自河南省三门峡市，现居南京。2010年毕业自南京农业大学计算机科学与技术学院，学士学位。毕业后进入南京富士通南大软件公司(FNST)工作。\r\n\r\n在富士通工作的4年期间，工作内容比较广泛，先后从事C、C++、MATLAB、JSP等语言相关项目的测试和开发工作。我热爱技术开发，曾利用业余时间为项目组开发了一套嵌入式工程在PC平台的自动化单元测试工具，极大的降低了测试的门槛、提高了测试的效率，也曾代领团队学习JSP开发，为日本客户搭建在线数据管理网站。\r\n在从事JSP开发的过程中，我渐渐热爱上了web开发，特别是前端的JavaScript语言。它灵活多变，各种hack技巧让人着迷，近年来丰富的各色框架也让它如虎添翼。新兴的HTML5和移动端web app有着广阔的应用场景。所以我逐渐将个人发展重心转向web端，参与了FNST为长安汽车开发的大型在线零部件管理系统(BOM)。在为期一年的开发过程中，我成为项目组最具经验的前端开发工程师，并负责整个前端的开发工作。\r\n\r\n为了进一步提升自己的互联网开发能力，我从FNST离职进入联创车盟。联创车盟是一家提供汽车O2O生活服务的互联网公司，目前还处于发展期。从内部管理网站到客户服务网站到官网到移动APP以及微信内嵌页面等等，有各方面的web开发需求，我也进一步参与其中，掌握了目前热门的各种js框架和开发理念。\r\n\r\n现在，我希望能在一个纯粹的互联网平台上施展自己的才华。"
     },
     jobExperiences: {
+        timedate: {
+            "timeline": {
+                "headline":"工作经验",
+                "type":"default",
+                "text":"work experience",
+                "startDate":"2010,3,20",
+                "maptype": "toner-lines",
+                "date": [
+                    {
+                        "startDate":"2010,3,20",
+                        "endDate":"2014,9,24",
+                        "headline":"入职南京富士通南大(FNST)",
+                        "text":"<pre>南京富士通南大软件技术有限公司（Nanjing Fujitsu Nanda Software Technology Co., Ltd）是世界500强企业、国际著名的IT解决方案和服务提供商日本富士通株式会社和中国著名大学南京大学合资组建的软件技术公司，是富士通软件事业集团的全球软件产品研发中心之一。</pre>",
+                        "asset": {
+                            "media":"http://jd.zynews.com/uploadfile/2012/12/29/6155291741191.jpg"/*,
+                            "credit":"Credit Name Goes Here",
+                            "caption":"Caption text goes here"*/
+                        }
+                    }, {
+                        "startDate": "2010,6,30",
+                        "endDate": "2013,6,30",
+                        "headline": "日本ISUZU柴油发动机ECU开发",
+                        "text": "<pre>1. 瑞萨单片机C语言程序开发 \r\n2. MATLAB GUI程序开发 \r\n3. WPF程序开发 \r\n4. JSP网站开发 \r\n\r\n拥有丰富的测试、开发和领导组织经验</pre>",
+                    }, {
+                        "startDate": "2012,12,26",
+                        "endDate": "2013,3,24",
+                        "headline": "赴日现场开发",
+                        "text": "<pre>日本横滨市Transtron公司现场开发作业</pre>",
+                        "asset": {
+                            "media": "http://sh.yun.ftn.qq.com/ftn_handler/91dec22eaba41ac30be3e1f39d7bc79fdf404f8963baf3122e108c6f1318a70e/?fname=%e5%8c%97%e6%b5%b7%e9%81%93%e4%ba%94%e5%8d%81%e9%93%83%e9%a3%9f%e5%a0%82.jpg&cn=0&cv=30111&size=640*640"
+                        }
+                    }, {
+                        "startDate": "2013,7,1",
+                        "endDate": "2014,9,24",
+                        "headline": "重庆长安汽车BOM在线管理系统开发",
+                        "text": "<pre>与日本公司合作完成对长安国产汽车产品线从设计到零部件生产到汽车组装及后期维护的完整线上管理和追踪！\r\n负责网站核心功能模块的前后端开发 \r\n前端：ExtJs3 \r\n后端：SSI(Struts、spring、ibatis) \r\n数据库：oracle</pre>",
+                        "asset": {
+                            "media": "http://pic31.nipic.com/20130710/10756792_111714354375_2.jpg"
+                        }
+                    }, {
+                        "startDate": "2014,9,25",
+                        "endDate": "now",
+                        "headline": "入职联创车盟",
+                        "text": "<pre>联创车盟（AA China）2004年7月成立于北京，隶属于南京联创科技集团。联创车盟定位“全国汽车服务网络提供商”，设有全国呼叫中心，并建立道路救援网、汽车服务网络、电子商务网络和汽车物联网络，提供以道路救援、出行保障、汽车服务业务为主的全方位汽车服务，客户覆盖金融、保险、电信、汽车等行业与个人车主。</pre>",
+                        "asset": {
+                            "media": "http://p2.55tuanimg.com/static/store/2013/02/03/d7df4c15fa6bcb174d5bf2ecf5d76376.jpg"
+                        }
+                    }, {
+                        "startDate": "2014,9,25",
+                        "endDate": "now",
+                        "headline": "互联网开发",
+                        "text": "<pre>从事互联网相关产品开发\r\n包括：\r\n桌面官网、移动端商城、APP内嵌webview、后台管理网站\r\n\r\n开发框架包括：\r\nangularJs\r\nExtJs\r\nbackbone\r\ngrunt、bower、requireJs\r\nnodejs\r\nselenium</pre>",
+                        "asset": {
+                            "media": "http://www.shichangbu.com/data/attachment/portal/201502/03/112822c4auru9ktffx6kxk.jpg"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    skill: {
+        works:[
+            {
+                name: "个人博客主页",
+                text: "www.qiaokaka.com"
+            },{
+                name: "github主页",
+                text: "https://github.com/kakanjau",
+                subwork: [
+                    {
+                        name: "homepage",
+                        text: "nodejs搭建个人博客系统"
+                    },{
+                        name: "mocha-web",
+                        text: "selenium + mocha + nodejs 前端自动测试及web查看结果"
+                    },{
+                        name: "jianli",
+                        text: "在线使用模板创建个人简历"
+                    },{
+                        name: "evernote-mail",
+                        text: "nodejs module，利用evernote的邮件功能，给自己的evernote账户新增文章"
+                    }
+                ]
+            }
+        ],
+        abilities:{
+            labels: ["javascript", "HTML/CSS", "nodejs", "JAVA", "SQL", "项目管理", "软件测试"],
+            datasets: [
+                {
+                    label: "My Second dataset",
+                    fillColor: "rgba(151,187,205,0.2)",
+                    strokeColor: "rgba(151,187,205,1)",
+                    pointColor: "rgba(151,187,205,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(151,187,205,1)",
+                    data: [81, 61, 61, 51, 51, 61, 61]
+                }
+            ]
+        }
+    },
+    contact:{
+        phone: "18012950566",
+        email: "qiaoliangsmx@163.com"
     }
   };
-  console.log(jsonData);
   res.render('template/' + req.params.template, jsonData);
 });
 
