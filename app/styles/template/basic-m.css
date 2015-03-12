@@ -1,0 +1,178 @@
+body {
+    /*background: #eee;*/
+}
+
+#main {
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+#main > .container {
+    min-height: 100px;
+    width: 100%;
+}
+
+#main > .container:first-child {
+    margin-top: 0 !important;
+}
+
+#main > .container:last-child {
+    margin-bottom: 0 !important;
+}
+
+#instruct {
+    height: 460px;
+    text-align: center;
+    vertical-align: middle; 
+    background-color: rgb(79,89,108);
+}
+
+.instruct-name {
+    height: 80%;
+    color: #fff;
+}
+
+.instruct-name > h1 {
+    position: relative;
+    font-size: 6rem;
+    top: 50%;
+    margin-top: -3rem;
+}
+
+.instruct-detail {
+    height: 20%;
+    width: 60%;
+    margin: 0 auto;
+    color: #eee;
+    text-align: left;
+}
+
+.instruct-detail pre {
+    background-color: inherit;
+    border: none;
+    font-size: 1rem;
+    text-align: center;
+    color: inherit;
+}
+
+#aboutMe {
+    font-size: 1rem;
+    padding: 2em;
+    margin: 0 auto;
+    background-color: #eee;
+}
+
+#aboutMe pre {
+    width: 100%;
+    margin: 0 auto;
+    background-color: inherit;
+    border: inherit;
+    font-size: inherit;
+    line-height: 2em;
+}
+
+#aboutMe pre:first-letter {
+    font-size: 2em;
+    margin: 0.3em 0;
+    float: left;
+}
+
+#jobExperiences {
+    background-color: currentcolor;
+}
+
+#jobExperiences ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#jobExperiences ul li {
+    display: inline-block;
+    width: 100%;
+    float: left;
+    white-space: pre-wrap;
+}
+
+#jobExperiences ul li h4 {
+    color: #fff;
+    text-align: center;
+    margin: 0.5em auto;
+}
+
+#jobExperiences ul li h6 {
+    color: #fff;
+    text-align: center;
+    margin: 0.5em auto;
+}
+
+#jobExperiences ul li img {
+    width: 100%;
+}
+
+#skill {
+    background-color: lightslategray;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#skill .title {
+    font-family: "微软雅黑";
+    font-weight: bold;
+    font-size: 3rem;
+    margin-top: 2em;
+}
+
+#skill .panel-body {
+    background-color: lightslategray;
+}
+
+#skill > .personal-work {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border: none;
+}
+
+#skill > .personal-work ul li a {
+    display: block;
+    float: right;
+    margin-right: 1em;
+    cursor: pointer;
+    color: inherit;
+}
+
+#skill > .personal-work ul ul {
+    margin-top: 1em;
+}
+
+
+#skill > .personal-work li span {
+    display: block;
+    margin-right: 1em;
+}
+
+#skill > .skill-ability {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 30px;
+}
+
+#skill > .skill-ability .progress {
+    margin-bottom: 10px;
+}
+
+#contact {
+    height: 150px;
+    background-color: rgb(26,188,156);
+    color: #fff;
+    text-align: center;
+    padding-top: 1em;
+}
+
+#contact h5 a{
+    color: #fff;
+}

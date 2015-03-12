@@ -1,0 +1,81 @@
+extends layout
+
+block template-head
+  link(rel="stylesheet" href="styles/template/basic-m.css")
+  script(src="/js/template/basic-m.js")
+
+block template-body
+  .main-container
+    #main.jumbotron(data-spy="scroll" data-target=".nav-container" data-offset="0")
+      #instruct.container
+        .instruct-name: h1 #{instruct.name}
+        .instruct-detail
+          pre #{instruct.detail}
+      #aboutMe.container
+        pre #{aboutMe.detail}
+      #jobExperiences.container
+        ul
+          each job in jobExperiences.timedate.timeline.date
+            li
+              h4 #{job.headline}
+              h6 #{job.startDate} - #{job.endDate} 
+              if job.asset && job.asset.media
+                img.media-object(src!= job.asset.media)
+
+              #{job.text}
+
+      #skill.container
+        .container.personal-work.panel.panel-default
+          .panel-heading 个人产品
+          .panel-body
+            mixin showWork(work, index)
+              if index%2 == 0
+                li.list-group-item.list-group-item-info
+                  label= work.name
+                  span= work.text
+                  if work.subwork && work.subwork.length > 0
+                    ul.list-group
+                      each subwork,subindex in work.subwork
+                        if subindex%2 == 0
+                          li.list-group-item.list-group-item-warning
+                        else
+                          li.list-group-item
+
+                            label= subwork.name
+                            span= subwork.text
+              else
+                li.list-group-item.list-group-item-success
+                  label= work.name
+                  span= work.text
+                  if work.subwork && work.subwork.length > 0
+                    ul.list-group
+                      each subwork,subindex in work.subwork
+                        if subindex%2 == 0
+                          li.list-group-item.list-group-item-warning
+                            label= subwork.name
+                            span= subwork.text
+                        else
+                          li.list-group-item
+                            label= subwork.name
+                            span= subwork.text
+
+            ul.list-group
+              each work,index in skill.works
+                +showWork(work, index)
+
+        .container.skill-ability.panel.panel-default
+          .panel-heading 专业能力
+          .panel-body
+            .skill-chart-contrainer
+            - var barClasses = ['progress-bar-success', 'progress-bar-info', 'progress-bar-warning', 'progress-bar-danger'];
+            each abilitie,index in skill.abilities
+              .progress
+                - var styleWidth = "width: " + abilitie.data + "%";
+                - var barClass = barClasses[index%4];
+                .progress-bar(class!= barClass, aria-valuenow!= abilitie.data, aria-valuemin="0", aria-valuemax="100", style!= styleWidth) #{abilitie.label}
+
+      #contact.container
+        h3 能与你们一起共事吗？
+        h5 电话: #{contact.phone}
+        h5 邮件: 
+          a(href="mailTo:"+contact.email) #{contact.email}

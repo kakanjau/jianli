@@ -102,28 +102,46 @@ router.get('/:template/:jsonId?', function(req, res){
                 ]
             }
         ],
-        abilities:{
-            labels: ["javascript", "HTML/CSS", "nodejs", "JAVA", "SQL", "项目管理", "软件测试"],
-            datasets: [
-                {
-                    label: "My Second dataset",
-                    fillColor: "rgba(151,187,205,0.2)",
-                    strokeColor: "rgba(151,187,205,1)",
-                    pointColor: "rgba(151,187,205,1)",
-                    pointStrokeColor: "#fff",
-                    pointHighlightFill: "#fff",
-                    pointHighlightStroke: "rgba(151,187,205,1)",
-                    data: [81, 61, 61, 51, 51, 61, 61]
-                }
-            ]
-        }
+        abilities:[
+            {
+                label: "javascript",
+                data: 81
+            },{
+                label: "HTML/CSS",
+                data: 61
+            },{
+                label: "nodejs",
+                data: 61
+            },{
+                label: "JAVA",
+                data: 51
+            },{
+                label: "SQL",
+                data: 51
+            },{
+                label: "项目管理",
+                data: 61
+            },{
+                label: "软件测试",
+                data: 61
+            }
+        ]
     },
     contact:{
         phone: "18012950566",
         email: "qiaoliangsmx@163.com"
     }
   };
-  res.render('template/' + req.params.template, jsonData);
+
+  var templateUrl = 'template/' + req.params.template;
+  if(isMobile(req.header('User-Agent'))){
+    templateUrl += '-m';
+  }
+  res.render(templateUrl, jsonData);
 });
+
+function isMobile(userAgent){
+    return /iPhone|iPad|iTouch|Android|IEMobile|SymbianOS|ucweb/.test(userAgent);
+}
 
 module.exports = router;

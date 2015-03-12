@@ -30,7 +30,26 @@
 
 
         // 创建个人能力雷达图
-        var chartData = $('#skillChart').data('abilities');
+        var abilities = $('#skillChart').data('abilities');
+        var chartData = {
+            labels: [],
+            datasets: [
+                {
+                    label: "My Second dataset",
+                    fillColor: "rgba(151,187,205,0.2)",
+                    strokeColor: "rgba(151,187,205,1)",
+                    pointColor: "rgba(151,187,205,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(151,187,205,1)",
+                    data: []
+                }
+            ]
+        };
+        $.each(abilities, function(index, item){
+            chartData.labels.push(item.label);
+            chartData.datasets[0].data.push(item.data);
+        });
         var chartOption = {
             // scaleShowLabels: true
         };
