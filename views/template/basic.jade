@@ -74,6 +74,7 @@ block template-body
               canvas(id="skillChart", width="400", height="400", data-abilities=skill.abilities)
       #contact.container
         h2 能与你们一起共事吗？
-        h5 电话: #{contact.phone}
+        h5 电话: 
+          a(href!=contact.phone) #{contact.phone}
         h5 邮件: 
           a(href="mailTo:"+contact.email) #{contact.email}

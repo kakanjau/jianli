@@ -76,6 +76,7 @@ block template-body
 
       #contact.container
         h3 能与你们一起共事吗？
-        h5 电话: #{contact.phone}
+        h5 电话: 
+          a(href!="tel://"+contact.phone) #{contact.phone}
         h5 邮件: 
           a(href="mailTo:"+contact.email) #{contact.email}
