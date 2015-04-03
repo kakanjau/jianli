@@ -1,14 +1,6 @@
 
 (function(){
 
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?a16efa7ff2c3eb7315e4ba76999cec70";
-      var s = document.getElementsByTagName("script")[0]; 
-      s.parentNode.insertBefore(hm, s);
-    })();
-
     $(function(){
         // 左侧菜单锚点点击事件
         $('a[href*=#]').click(function() { 

@@ -7,6 +7,14 @@ block template-head
   script(src="/vendor/TimelineJS/build/js/storyjs-embed.js")
   script(src="/vendor/chartjs/Chart.js")
   script(src="/js/template/basic.js")
+  script(type='text/javascript').
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?efc2803579091d519bab970bf06cdacb";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
 
 block template-body
   .col-md-1.col-xs-1.nav-container

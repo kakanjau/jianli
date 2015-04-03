@@ -3,6 +3,15 @@ extends layout
 block template-head
   link(rel="stylesheet" href="styles/template/basic-m.css")
   script(src="/js/template/basic-m.js")
+  script(src="/js/template/basic.js")
+  script(type='text/javascript').
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?efc2803579091d519bab970bf06cdacb";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
 
 block template-body
   .main-container
